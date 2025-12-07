@@ -1,1 +1,27 @@
 @import "tailwindcss";
+.zebra-line {
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+}
+
+.zebra-pattern {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  display: flex;
+  transform: skewX(-45deg);
+  transform-origin: top left;
+}
+
+.zebra-pattern > div:nth-child(odd) {
+  background: white;
+  flex: 2;
+}
+
+.zebra-pattern > div:nth-child(even) {
+  background: black;
+  flex: 1;
+}
