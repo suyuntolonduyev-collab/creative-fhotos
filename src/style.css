@@ -1,4 +1,49 @@
 @import "tailwindcss";
+<<<<<<< HEAD
+=======
+
+@font-face {
+  font-family: "Compact";
+  src: url("/public/fonts/Compact.woff2") format("woff2"),
+    url("/public/fonts/Compact.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Подключение жирного варианта Compact */
+@font-face {
+  font-family: "Compact";
+  src: url("/public/fonts/Compact-Bold.woff2") format("woff2"),
+    url("/public/fonts/Compact-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Подключение шрифта Prestige */
+@font-face {
+  font-family: "Prestige";
+  src: url("/src/fonts/Compact\ Regular.woff2") format("woff2"),
+    url("/src/fonts/compact.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "Prestige", sans-serif;
+}
+
+/* Классы для шрифтов */
+.font-compact {
+  font-family: "Compact", sans-serif;
+}
+
+.font-prestige {
+  font-family: "Prestige", sans-serif;
+}
+>>>>>>> main
 .zebra-line {
   position: relative;
   height: 60px;
