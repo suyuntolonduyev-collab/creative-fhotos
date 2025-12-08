@@ -1,1 +1,69 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Compact";
+  src: url("/public/fonts/Compact.woff2") format("woff2"),
+    url("/public/fonts/Compact.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Подключение жирного варианта Compact */
+@font-face {
+  font-family: "Compact";
+  src: url("/public/fonts/Compact-Bold.woff2") format("woff2"),
+    url("/public/fonts/Compact-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Подключение шрифта Prestige */
+@font-face {
+  font-family: "Prestige";
+  src: url("/src/fonts/Compact\ Regular.woff2") format("woff2"),
+    url("/src/fonts/compact.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "Prestige", sans-serif;
+}
+
+/* Классы для шрифтов */
+.font-compact {
+  font-family: "Compact", sans-serif;
+}
+
+.font-prestige {
+  font-family: "Prestige", sans-serif;
+}
+.zebra-line {
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+}
+
+.zebra-pattern {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  display: flex;
+  transform: skewX(-45deg);
+  transform-origin: top left;
+}
+
+.zebra-pattern > div:nth-child(odd) {
+  background: white;
+  flex: 2;
+}
+
+.zebra-pattern > div:nth-child(even) {
+  background: black;
+  flex: 1;
+}
