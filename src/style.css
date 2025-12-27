@@ -36,29 +36,24 @@
   font-family: "Prestige", sans-serif;
 }
 
-.zebra-line {
-  position: relative;
-  height: 60px;
-  overflow: hidden;
-}
-
-.zebra-pattern {
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 300%;
-  height: 100%;
+/* Стили для кастомных стрелок */
+.slider-nav-btn {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #4b5563; /* gray-600 */
   display: flex;
-  transform: skewX(-45deg);
-  transform-origin: top left;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s;
+  cursor: pointer;
 }
-
-.zebra-pattern > div:nth-child(odd) {
-  background: white;
-  flex: 2;
+.slider-nav-btn:hover,
+.slider-nav-btn:not(.swiper-button-disabled):active {
+  border-color: #b38b6d;
+  color: #b38b6d;
 }
-
-.zebra-pattern > div:nth-child(even) {
-  background: black;
-  flex: 1;
+.swiper-button-disabled {
+  opacity: 0.5;
+  cursor: default;
 }
