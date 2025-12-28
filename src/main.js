@@ -6,14 +6,14 @@ import { setupCounter } from "./counter.js";
 document.addEventListener("DOMContentLoaded", () => {
   const initChatImageSlider = () => {
     const slides = [
-      "./public/images/chat-mockup-01.svg",
-      "./public/images/chat-mockup-02.svg",
-      "./public/images/chat-mockup-03.svg",
-      "./public/images/chat-mockup-04.svg",
+      "./images/chat-mockup-01.svg",
+      "./images/chat-mockup-02.svg",
+      "./images/chat-mockup-03.svg",
+      "./images/chat-mockup-04.svg",
 
-      "./public/images/chat-mockup-05.svg",
+      "./images/chat-mockup-05.svg",
 
-      "./public/images/chat-mockup-00.svg",
+      "./images/chat-mockup-00.svg",
     ];
 
     const imgElement = document.getElementById("chat-slider-image");

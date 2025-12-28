@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Compact";
-  src: url("/public/fonts/Compact.woff2") format("woff2"),
+  src: url("/fonts/Compact.woff2") format("woff2"),
     url("/public/fonts/Compact.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -11,8 +11,8 @@
 
 @font-face {
   font-family: "Compact";
-  src: url("/public/fonts/Compact-Bold.woff2") format("woff2"),
-    url("/public/fonts/Compact-Bold.woff") format("woff");
+  src: url("/fonts/Compact-Bold.woff2") format("woff2"),
+    url("/fonts/Compact-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -20,8 +20,8 @@
 
 @font-face {
   font-family: "Prestige";
-  src: url("/public/fonts/prestige_normal.woff Regular.woff2") format("woff2"),
-    url("/public/fonts/prestige_normal.woff") format("woff");
+  src: url("/fonts/prestige_normal.woff Regular.woff2") format("woff2"),
+    url("/fonts/prestige_normal.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
