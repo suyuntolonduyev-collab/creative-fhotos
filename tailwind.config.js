@@ -1,13 +1,18 @@
 /** @type {import(tailwindcss).Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,html}"],
+  content: [
+    "./index.html",
+    "./prise.html",
+    "./exemples.html",
+    "./src/**/*.{js,ts,jsx,tsx,html}",
+  ],
   theme: {
     extend: {
       colors: {
-        "brand-beige": "#FCFCF5",
-        "brand-gold": "#ddbb97",
-        "brand-brown": "#B38B6D",
-        "brand-black": "#000000",
+        dark: "#0E0C0A",
+        beige: "#FCFCF5",
+        gold: "#B38B6D",
+        goldHover: "#ddbb97",
       },
       fontFamily: {
         compact: ["Compact", "sans-serif"],

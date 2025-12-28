@@ -14,9 +14,10 @@
         <div
           class="container mx-auto pt-[20px] px-4 flex justify-between items-center font-c"
         >
-          <a href="/">
+          <a href="#" id="menu-open-btn">
             <img src="/public/Меню.svg" alt="" />
           </a>
+
           <div>
             <svg
               width="42"
@@ -31,6 +32,7 @@
               />
             </svg>
           </div>
+
           <button>
             <svg
               width="36"
@@ -47,15 +49,19 @@
           </button>
 
           <nav
+            id="mobile-menu"
             class="hidden absolute inset-0 z-40 min-h-screen w-full top-0 left-0 py-6 px-0"
           >
             <div
-              class="bg-[#0E0C0A] absolute z-50 min-h-screen w-full top-0 left-0 py-6 px-0"
+              class="bg-[#0E0C0A] absolute z-40 min-h-screen w-full top-0 left-0 py-6 px-0"
             >
               <div
                 class="border-b-[0.1px] flex justify-between items-center w-full pb-5 border-b-[#ddbb97] px-6"
               >
-                <button class="transition-colors duration-200 hover:opacity-75">
+                <button
+                  id="menu-close-btn"
+                  class="transition-colors duration-200 hover:opacity-75"
+                >
                   <svg
                     width="21"
                     height="22"
@@ -69,6 +75,7 @@
                     />
                   </svg>
                 </button>
+
                 <div>
                   <svg
                     width="42"
@@ -107,7 +114,7 @@
                 <li>
                   <a
                     class="text-xl text-[#FCFCF5] transition-colors duration-200 hover:bg-[#ddbb97]"
-                    href="#"
+                    href="./prise.html"
                     >Что это вообще</a
                   >
                 </li>
@@ -121,13 +128,14 @@
                 <li>
                   <a
                     class="text-xl text-[#FCFCF5] transition-colors duration-200 hover:bg-[#ddbb97]"
-                    href="#"
+                    href="./exemples.html"
                     >Примеры заданий</a
                   >
                 </li>
                 <li class="pb-7">
                   <a
-                    class="text-xl text-[#FCFCF5] transition-colors duration-200 hover:bg-[#ddbb97]"
+                    data-modal="modal-payment"
+                    class="text-xl text-[#FCFCF5] js-open-modal transition-colors duration-200 hover:bg-[#ddbb97]"
                     href="#"
                     >Стать жителем города</a
                   >
@@ -138,7 +146,6 @@
                 class="pt-0 bg-[#0E0C0A] px-6 border-b-[1px] pb-7 border-b-[#ddbb97]"
               >
                 <h3 class="text-[#FCFCF5] text-2xl mb-7">Помощь</h3>
-
                 <div
                   class="block py-4 text-lg border mb-7 text-center border-1 text-[#FCFCF5] transition-all duration-200 border-[#FCFCF5] hover:bg-[#ddbb97]"
                 >
@@ -157,7 +164,7 @@
                   </svg>
                   <a
                     class="text-xl inline-block transition-colors duration-200 hover:bg-[#ddbb97]"
-                    href="#"
+                    href="https://t.me/s/krasivie_kartinki_1?before=317964"
                     >Написать в telegram</a
                   >
                 </div>
@@ -180,7 +187,7 @@
                   </svg>
                   <a
                     class="text-xl inline-block transition-colors duration-200 hover:bg-[#ddbb97]"
-                    href="#"
+                    href="https://t.me/durov_russia"
                     >Написать в whatsapp</a
                   >
                 </div>
@@ -223,16 +230,18 @@
               class="flex flex-row flex-center items-center gap-9 leading-[24px] justify-center font-[14px]"
             >
               <li>
-                <a href="#">Что это вообще</a>
+                <a href="./prise.html">Что это вообще</a>
               </li>
               <li>
                 <a href="#">Для кого</a>
               </li>
               <li>
-                <a href="#"> Примеры заданий</a>
+                <a href="./exemples.html"> Примеры заданий</a>
               </li>
               <li>
-                <a href="#">вход в личный кабинет</a>
+                <a data-modal="modal-payment" class="js-open-modal" href="#"
+                  >вход в личный кабинет</a
+                >
               </li>
             </ul>
           </nav>
@@ -278,19 +287,133 @@
             class="flex flex-col tracking-[5%] sm:flex-row text-[14px] justify-center items-center gap-4 mb-[40px] md:mb-[60px] mt-[30px] md:mt-[50px] px-4"
           >
             <a
-              href="#"
+              href="./prise.html"
               class="w-full sm:w-auto text-center py-0 px-6 md:py-0 border-2 border-white bg-[#0E0C0A] text-white transition-colors duration-300 hover:bg-[#B38B6D]"
             >
               Посмотреть, Как все устроено
             </a>
             <a
               href="#"
-              class="w-full sm:w-auto text-center py-0 px-6 md:py-0 border-2 border-white bg-[#0E0C0A] text-white transition-colors duration-300 hover:bg-[#B38B6D]"
+              data-modal="modal-payment"
+              class="w-full sm:w-auto js-open-modal text-center py-0 px-6 md:py-0 border-2 border-white bg-[#0E0C0A] text-white transition-colors duration-300 hover:bg-[#B38B6D]"
             >
               Я в курсе, хочу подписку
             </a>
           </div>
 
+          <div
+            id="modal-payment"
+            class="fixed inset-0 z-50 z-[60] hidden"
+            role="dialog"
+            aria-modal="true"
+          >
+            <div
+              class="absolute inset-0 bg-[#0E0C0A]/90 backdrop-blur-sm transition-opacity js-modal-overlay"
+            ></div>
+
+            <div
+              class="relative z-10 w-full h-full flex items-center justify-center p-4 overflow-y-auto"
+            >
+              <div
+                class="relative bg-[#FCFCF5] w-full max-w-[500px] rounded-[30px] p-8 md:p-10 shadow-2xl animate-fade-in-up my-auto flex flex-col items-center text-center"
+              >
+                <button
+                  class="js-modal-close absolute top-5 right-5 text-[#e0dbd6] hover:text-[#B38B6D] transition-colors p-2"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M18 6L6 18"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="square"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6 6L18 18"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="square"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+
+                <div
+                  class="mb-6 w-[100px] h-[100px] md:w-[120px] md:h-[120px] text-[#0E0C0A]"
+                >
+                  <img src="./public/bull.svg" alt="bull" />
+                </div>
+
+                <h2
+                  class="font-compact text-[48px] md:text-[64px] leading-[0.9] text-[#0E0C0A] uppercase mb-2"
+                >
+                  2,000 рублей
+                </h2>
+                <p
+                  class="font-prestige text-[18px] md:text-[20px] text-[#0E0C0A] mb-1"
+                >
+                  Туристическая виза
+                </p>
+                <p
+                  class="font-prestige text-[16px] md:text-[18px] text-[#0E0C0A] mb-8"
+                >
+                  05 мая — 05 июня
+                </p>
+
+                <div
+                  class="font-prestige text-[#0E0C0A] text-[15px] md:text-[16px] leading-[1.4] space-y-1 mb-8 max-w-[380px]"
+                >
+                  <p>Не закрывайте сайт после оплаты!</p>
+                  <p>Вас переадресует на страницу создания пароля.</p>
+                  <p>Плюс продублируем все на емейл.</p>
+                </div>
+
+                <form class="w-full flex flex-col gap-4">
+                  <input
+                    type="email"
+                    placeholder="Электронная почта"
+                    required
+                    class="w-full border border-[#0E0C0A] text-black bg-transparent p-4 font-prestige text-[16px] placeholder:text-[#0E0C0A]/60 focus:outline-none focus:border-[#B38B6D] focus:ring-1 focus:ring-[#B38B6D] transition-all"
+                  />
+
+                  <button
+                    type="button"
+                    class="w-full bg-[#B38B6D] text-[#FCFCF5] font-compact uppercase text-[20px] md:text-[22px] leading-[1.1] py-4 md:py-5 px-4 hover:opacity-90 active:scale-[0.99] transition-all duration-300"
+                  >
+                    Оплатить банковской картой,<br />Apple и Google Pay
+                  </button>
+
+                  <button
+                    type="button"
+                    class="w-full bg-[#B38B6D] text-[#FCFCF5] font-compact uppercase text-[20px] md:text-[22px] py-4 md:py-5 px-4 hover:opacity-90 active:scale-[0.99] transition-all duration-300"
+                  >
+                    Оплатить PayPal
+                  </button>
+                </form>
+
+                <div class="mt-6 text-center">
+                  <p
+                    class="font-prestige text-[10px] md:text-[11px] text-[#0E0C0A]/50 leading-tight"
+                  >
+                    Отправляя данную форму вы соглашаетесь с
+                    <a href="#" class="underline hover:text-[#B38B6D]"
+                      >Договором оферты</a
+                    ><br />
+                    и
+                    <a href="#" class="underline hover:text-[#B38B6D]"
+                      >Политикой обработки персональных данных</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="relative flex justify-center w-full mt-10 px-4 md:px-0">
             <div class="absolute top-[86%] left-0 w-full z-10">
               <div
@@ -305,7 +428,7 @@
                   );
                 "
               ></div>
-              <div class="bg-[#FCFCF5] h-[160px] md:h-[87px] w-full"></div>
+              <div class="bg-[#FCFCF5] h-[280px] md:h-[897px] w-full"></div>
             </div>
 
             <div
@@ -382,7 +505,8 @@
       </div>
     </div>
     <main class="bg-[#FCFCF5] normal-case">
-      <div class="text-[#0E0C0A]">
+      <!--  -->
+      <div class="text-[#0E0C0A] relative z-40">
         <div class="mx-auto px-4 pb-[80px]">
           <div class="text-center pt-4 md:pt-[40px]">
             <h2
@@ -396,6 +520,375 @@
               кто тащится от съемки
             </h2>
           </div>
+          <!-- 1 -->
+          <div
+            id="modal-intensive"
+            class="fixed inset-0 z-50 hidden overflow-y-hidden"
+            aria-labelledby="modal-title-intensive"
+            role="dialog"
+            aria-modal="true"
+          >
+            <div
+              class="absolute inset-0 bg-[#0E0C0A]/90 mx-auto backdrop-blur-sm transition-opacity js-modal-overlay"
+            ></div>
+
+            <div
+              class="flex items-center justify-center mx-auto min-h-screen p-4 overflow-y-auto pointer-events-none"
+            >
+              <div
+                class="flex items-center relative bg-[#FCFCF5] justify-center min-h-screen p-4 mx-auto pointer-events-none"
+              >
+                <div
+                  class="relative flex flex-col w-full max-w-[420px] gap-6 p-8 shadow-xl bg-brand-beige md:p-12 pointer-events-auto"
+                >
+                  <button
+                    type="button"
+                    class="js-modal-close absolute transition-opacity top-6 right-6 p-2 hover:opacity-70"
+                    aria-label="Закрыть"
+                  >
+                    <svg
+                      width="27"
+                      height="28"
+                      viewBox="0 0 27 28"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.6526 10.824L2.82861 0L0.000186205 2.82843L10.8242 13.6524L0 24.4767L2.82843 27.3051L13.6526 16.4809L24.0418 26.8701L26.8702 24.0416L16.4811 13.6524L26.8701 3.26345L24.0416 0.435024L13.6526 10.824Z"
+                        fill="#0E0C0A"
+                      />
+                    </svg>
+                  </button>
+
+                  <h2
+                    id="modal-title-intensive"
+                    class="mt-4 text-[48px] leading-[0.9] text-center uppercase font-compact text-brand-black"
+                  >
+                    Подготовительный<br />интенсив
+                  </h2>
+
+                  <div
+                    class="space-y-4 text-[16px] leading-[1.35] text-center font-prestige text-brand-black"
+                  >
+                    <p>
+                      Мы жарим фоточки уже два месяца. Хочешь быстро влиться в
+                      тусовку? Записывайся на интенсив — дополнительную неделю в
+                      городе по суперцене.
+                    </p>
+                    <p>
+                      Каждый день ты будешь выполнять задания, смотреть
+                      вебинары, прокачивать фотографическую мышцу. Чтобы 5 июня
+                      зайти в чат и порвать там всех.
+                    </p>
+                  </div>
+
+                  <div class="px-2 py-4 text-center border border-brand-black">
+                    <span
+                      class="text-[18px] tracking-wide uppercase font-compact text-brand-black"
+                    >
+                      Интенсив нельзя пройти отдельно
+                    </span>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="w-full py-4 transition-colors duration-300 text-[#FCFCF5] bg-[#B38B6D] hover:bg-[#967259]"
+                  >
+                    <span class="text-[24px] uppercase font-compact"
+                      >Записаться</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div
+            id="modal-visa"
+            class="fixed inset-0 z-50 hidden"
+            aria-labelledby="modal-visa-title"
+            role="dialog"
+            aria-modal="true"
+          >
+            <div
+              class="absolute inset-0 bg-[#0E0C0A]/90 mx-auto backdrop-blur-sm transition-opacity js-modal-overlay"
+            ></div>
+
+            <div
+              class="flex items-center justify-center mx-auto min-h-screen p-4 overflow-y-auto pointer-events-none"
+            >
+              <article
+                class="relative w-full max-w-[420px] md:max-w-[640px] bg-[#FCFCF5] shadow-2xl flex flex-col pointer-events-auto"
+              >
+                <button
+                  type="button"
+                  class="js-modal-close absolute top-5 right-5 md:top-8 md:right-8 z-10 p-2 hover:opacity-60 transition-opacity"
+                  aria-label="Закрыть"
+                >
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M18 6L6 18M6 6L18 18"
+                      stroke="#0E0C0A"
+                      stroke-width="2.5"
+                      stroke-linecap="square"
+                    />
+                  </svg>
+                </button>
+
+                <div
+                  class="px-6 pt-12 pb-8 md:px-14 md:pt-16 md:pb-10 flex flex-col items-center text-center"
+                >
+                  <h2
+                    id="modal-visa-title"
+                    class="font-compact text-[52px] leading-[0.85] uppercase text-[#0E0C0A] tracking-tighter mb-8 md:mb-10"
+                  >
+                    Туристическая виза
+                  </h2>
+
+                  <div
+                    class="w-full border-[2px] border-[#0E0C0A] py-4 px-4 md:py-5 md:px-8 mb-8 md:mb-10"
+                  >
+                    <div
+                      class="font-compact text-[18px] md:text-[22px] uppercase tracking-wide text-[#0E0C0A]"
+                    >
+                      <p class="leading-none mb-1 md:mb-2">
+                        Доступ к материалам и чату
+                      </p>
+                      <p class="leading-none">откроется 5 июня</p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="font-prestige text-[16px] md:text-[18px] leading-[1.5] text-[#0E0C0A] space-y-4 md:space-y-5 max-w-[500px] mb-8 md:mb-12"
+                  >
+                    <p>
+                      Деньги за визу списываются каждый месяц 4 числа. Хочешь
+                      сэкономить 2 косаря — оформи гражданство.
+                    </p>
+                    <p>
+                      Отказаться от подписки можно в любой момент в личном
+                      кабинете.
+                    </p>
+                    <p>
+                      Пока ждешь, можешь пройти интенсив и хорошенько
+                      подготовиться к новому заезду.
+                    </p>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="w-full bg-[#B38B6D] py-4 md:py-5 hover:bg-[#967259] transition-colors duration-300"
+                  >
+                    <span
+                      class="font-compact text-[24px] md:text-[28px] uppercase text-[#FCFCF5] tracking-wide"
+                    >
+                      Стать жителем города
+                    </span>
+                  </button>
+                </div>
+
+                <footer
+                  class="bg-[#0E0C0A] px-6 py-6 md:px-10 md:py-8 text-[#FCFCF5] md:flex md:justify-between md:items-center"
+                >
+                  <div class="flex items-center gap-5 md:gap-6 mb-5 md:mb-0">
+                    <div
+                      class="w-[42px] h-[42px] md:w-[48px] md:h-[48px] bg-[#B38B6D] flex items-center justify-center shrink-0 cursor-pointer hover:opacity-90 transition-opacity"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="md:w-[28px] md:h-[28px]"
+                      >
+                        <path
+                          d="M20 6L9 17L4 12"
+                          stroke="#FCFCF5"
+                          stroke-width="3"
+                          stroke-linecap="square"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col md:pr-[25px] text-left">
+                      <h3
+                        class="font-compact text-[22px] md:text-[26px] uppercase leading-[1] mb-1"
+                      >
+                        Подготовительный интенсив
+                      </h3>
+                      <p
+                        class="font-prestige text-[14px] md:text-[15px] text-gray-400"
+                      >
+                        Наверстать пропущенное
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="w-full h-[1px] bg-gray-800 mb-5 md:hidden"></div>
+
+                  <div class="flex flex-col gap-1 md:text-right md:items-end">
+                    <span
+                      class="font-compact text-[24px] md:text-[26px] uppercase leading-none tracking-wide"
+                      >500 рублей / 1 неделя</span
+                    >
+                    <span
+                      class="font-prestige text-[15px] md:text-[16px] text-[#FCFCF5] opacity-80"
+                      >25 мая — 1 июня</span
+                    >
+                  </div>
+                </footer>
+              </article>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div
+            id="modal-citizenship"
+            class="fixed inset-0 z-50 hidden"
+            aria-labelledby="modal-citizenship-title"
+            role="dialog"
+            aria-modal="true"
+          >
+            <div
+              class="absolute inset-0 bg-[#0E0C0A]/90 mx-auto backdrop-blur-sm transition-opacity js-modal-overlay"
+            ></div>
+
+            <div
+              class="flex items-center justify-center mx-auto min-h-screen p-4 overflow-y-auto pointer-events-none"
+            >
+              <article
+                class="relative w-full max-w-[420px] md:max-w-[640px] bg-[#FCFCF5] shadow-2xl flex flex-col pointer-events-auto"
+              >
+                <button
+                  type="button"
+                  class="js-modal-close absolute top-5 right-5 md:top-8 md:right-8 z-10 p-2 hover:opacity-60 transition-opacity"
+                  aria-label="Закрыть"
+                >
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M18 6L6 18M6 6L18 18"
+                      stroke="#0E0C0A"
+                      stroke-width="2.5"
+                      stroke-linecap="square"
+                    />
+                  </svg>
+                </button>
+
+                <div
+                  class="px-6 pt-12 pb-8 md:px-14 md:pt-16 md:pb-10 flex flex-col items-center text-center"
+                >
+                  <h2
+                    id="modal-citizenship-title"
+                    class="font-compact text-[52px] md:text-[92px] leading-[0.85] uppercase text-[#0E0C0A] tracking-tighter mb-8 md:mb-10"
+                  >
+                    Гражданство
+                  </h2>
+
+                  <div
+                    class="w-full border-[2px] border-[#0E0C0A] py-4 px-4 md:py-5 md:px-8 mb-8 md:mb-10"
+                  >
+                    <div
+                      class="font-compact text-[18px] md:text-[22px] uppercase tracking-wide text-[#0E0C0A]"
+                    >
+                      <p class="leading-none mb-1 md:mb-2">
+                        Доступ к материалам и чату
+                      </p>
+                      <p class="leading-none">откроется 5 июня</p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="font-prestige text-[16px] md:text-[18px] leading-[1.5] text-[#0E0C0A] space-y-4 md:space-y-5 max-w-[500px] mb-8 md:mb-12"
+                  >
+                    <p>
+                      Отказаться от подписки можно в любой момент в личном
+                      кабинете.
+                    </p>
+                    <p>
+                      Пока ждешь, можешь пройти интенсив и хорошенько
+                      подготовиться к новому заезду.
+                    </p>
+                    <p>
+                      Интенсив оплачивается дополнительно — 500 рублей с носа.
+                    </p>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="w-full bg-[#B38B6D] py-4 md:py-5 hover:bg-[#967259] transition-colors duration-300"
+                  >
+                    <span
+                      class="font-compact text-[24px] md:text-[28px] uppercase text-[#FCFCF5] tracking-wide"
+                    >
+                      Стать жителем города
+                    </span>
+                  </button>
+                </div>
+
+                <footer
+                  class="bg-[#0E0C0A] px-6 py-6 md:px-10 md:py-8 text-[#FCFCF5] md:flex md:justify-between md:items-center"
+                >
+                  <div class="flex items-center gap-5 md:gap-6 mb-5 md:mb-0">
+                    <div
+                      class="w-[42px] h-[42px] md:w-[48px] md:h-[48px] bg-[#B38B6D] flex items-center justify-center shrink-0 cursor-pointer hover:opacity-90 transition-opacity"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="md:w-[28px] md:h-[28px]"
+                      >
+                        <path
+                          d="M20 6L9 17L4 12"
+                          stroke="#FCFCF5"
+                          stroke-width="3"
+                          stroke-linecap="square"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col text-left">
+                      <h3
+                        class="font-compact text-[22px] md:text-[26px] uppercase leading-[1] mb-1"
+                      >
+                        Подготовительный интенсив
+                      </h3>
+                      <p
+                        class="font-prestige text-[14px] md:text-[15px] text-gray-400"
+                      >
+                        Наверстать пропущенное
+                      </p>
+                    </div>
+                  </div>
+                  <div class="w-full h-[1px] bg-gray-800 mb-5 md:hidden"></div>
+                  <div class="flex flex-col gap-1 md:text-right md:items-end">
+                    <span
+                      class="font-compact text-[24px] md:text-[26px] uppercase leading-none tracking-wide"
+                      >500 рублей / 1 неделя</span
+                    >
+                    <span
+                      class="font-prestige text-[15px] md:text-[16px] text-[#FCFCF5] opacity-80"
+                      >25 мая — 1 июня</span
+                    >
+                  </div>
+                </footer>
+              </article>
+            </div>
+          </div>
 
           <div
             class="flex flex-col md:flex-row justify-center items-stretch gap-4 font-light md:max-w-4xl mx-auto"
@@ -404,21 +897,27 @@
               <div
                 class="relative z-10 border-2 border-black bg-[#FCFCF5] p-1 min-h-[156px] h-full"
               >
-                <div
-                  class="border border-black bg-[#FCFCF5] px-[14px] pt-[20px] min-h-[156px] pb-5 h-full flex flex-col justify-center text-center"
+                <a
+                  href="#"
+                  class="js-open-modal block h-full"
+                  data-modal="modal-intensive"
                 >
-                  <h3
-                    class="text-[24px] md:text-[28px] leading-[28px] md:leading-[32px] mb-3"
+                  <div
+                    class="border border-black bg-[#FCFCF5] px-[14px] pt-[20px] min-h-[156px] pb-5 h-full flex flex-col justify-center text-center"
                   >
-                    Начинающим <br />
-                    фотографам
-                  </h3>
-                  <p
-                    class="text-[14px] leading-[17px] normal-case font-prestige"
-                  >
-                    Поймете, что можете круто снимать
-                  </p>
-                </div>
+                    <h3
+                      class="text-[24px] md:text-[28px] leading-[28px] md:leading-[32px] mb-3"
+                    >
+                      Начинающим <br />
+                      фотографам
+                    </h3>
+                    <p
+                      class="text-[14px] leading-[17px] normal-case font-prestige"
+                    >
+                      Поймете, что можете круто снимать
+                    </p>
+                  </div>
+                </a>
               </div>
             </div>
 
@@ -426,48 +925,59 @@
               <div
                 class="relative z-10 border-2 border-black bg-[#FCFCF5] min-h-[156px] p-1 h-full"
               >
-                <div
-                  class="border border-black bg-[#FCFCF5] px-[14px] min-h-[156px] pt-[20px] pb-5 h-full flex flex-col justify-center text-center"
+                <a
+                  href="#"
+                  class="js-open-modal block h-full"
+                  data-modal="modal-visa"
                 >
-                  <h3
-                    class="text-[24px] md:text-[28px] leading-[28px] md:leading-[32px] mb-3"
+                  <div
+                    class="border border-black bg-[#FCFCF5] px-[14px] min-h-[156px] pt-[20px] pb-5 h-full flex flex-col justify-center text-center"
                   >
-                    Профессиональным фотографам
-                  </h3>
-                  <p
-                    class="text-[14px] leading-[17px] normal-case font-prestige"
-                  >
-                    Вспомните, что фотография — не только работа
-                  </p>
-                </div>
+                    <h3
+                      class="text-[24px] md:text-[28px] leading-[28px] md:leading-[32px] mb-3"
+                    >
+                      Профессиональным фотографам
+                    </h3>
+                    <p
+                      class="text-[14px] leading-[17px] normal-case font-prestige"
+                    >
+                      Вспомните, что фотография — не только работа
+                    </p>
+                  </div>
+                </a>
               </div>
             </div>
 
             <div class="flex-1 w-full min-h-[156px] md:max-w-[275px]">
-              <div
-                class="relative z-10 border-2 border-black min-h-[156px] bg-[#FCFCF5] p-1 h-full"
+              <a
+                href="#"
+                class="js-open-modal block h-full"
+                data-modal="modal-citizenship"
               >
                 <div
-                  class="border border-black bg-[#FCFCF5] min-h-[156px] px-[14px] pt-[20px] pb-5 h-full flex flex-col justify-center text-center"
+                  class="relative z-10 border-2 border-black min-h-[156px] bg-[#FCFCF5] p-1 h-full"
                 >
-                  <h3
-                    class="text-[24px] md:text-[28px] leading-[28px] md:leading-[32px] mb-3"
+                  <div
+                    class="border border-black bg-[#FCFCF5] min-h-[156px] px-[14px] pt-[20px] pb-5 h-full flex flex-col justify-center text-center"
                   >
-                    Вообще <br />
-                    не фотографам
-                  </h3>
-                  <p
-                    class="text-[14px] leading-[17px] pb-4 normal-case font-prestige"
-                  >
-                    Подсядете на новое хобби
-                  </p>
+                    <h3
+                      class="text-[24px] md:text-[28px] leading-[28px] md:leading-[32px] mb-3"
+                    >
+                      Вообще <br />
+                      не фотографам
+                    </h3>
+                    <p
+                      class="text-[14px] leading-[17px] pb-4 normal-case font-prestige"
+                    >
+                      Подсядете на новое хобби
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
       </div>
-
       <div class="bg-[#0E0C0A] md:hidden">
         <div class="pb-[25px] px-4">
           <div class="w-full">
@@ -496,11 +1006,13 @@
                 class="max-w-full h-auto"
               />
             </div>
-            <p
-              class="font-prestige normal-case text-center text-[14px] mt-4 text-white"
-            >
-              Работы горожан
-            </p>
+            <a href="./exemples.html">
+              <p
+                class="font-prestige normal-case text-center text-[14px] mt-4 text-white"
+              >
+                Работы горожан
+              </p>
+            </a>
           </div>
         </div>
       </div>
@@ -584,7 +1096,9 @@
             <div
               class="hidden md:block flex items-center bg-[#0E0C0A] text-[#FCFCF5] mt-[40px] ml-[20px] mb-[30px] text-center max-w-[225px] h-[45px] opacity-100 transition-colors duration-200 hover:bg-[#ddbb97]"
             >
-              <a href="#">Стать жителем города </a>
+              <a data-modal="modal-payment" class="js-open-modal" href="#"
+                >Стать жителем города
+              </a>
             </div>
           </div>
 
@@ -598,7 +1112,9 @@
           <div
             class="justify-center md:hidden items-center mx-auto bg-[#0E0C0A] text-[#FCFCF5] mb-[30px] text-center max-w-[303px] h-[45px] opacity-100"
           >
-            <a href="#">Стать жителем города </a>
+            <a data-modal="modal-payment" class="js-open-modal" href="#"
+              >Стать жителем города
+            </a>
           </div>
         </div>
       </div>
@@ -635,7 +1151,6 @@
               <h2 class="text-[#B38B6D]">Результаты</h2>
               <h2>участников</h2>
             </div>
-
             <h2
               class="hidden md:block text-[62px] leading-[70px] tracking-[0%] text-center pb-[25px]"
             >
@@ -713,7 +1228,7 @@
 
             <div class="pt-[30px] px-4">
               <a
-                href="#"
+                href="./exemples.html"
                 class="md:w-[231px] mx-auto flex flex-row justify-center items-center tracking-[5%] text-center w-full h-[48px] border border-[#FCFCF5] text-[#FCFCF5] gap-3 opacity-100 transition-colors duration-200 hover:bg-[#B38B6D]"
               >
                 <span>Больше фотографий</span>
@@ -1362,13 +1877,14 @@
 
                 <div class="mt-auto w-full flex flex-col items-center gap-5">
                   <button
-                    class="bg-[#B38B6D] text-white w-full max-w-[240px] md:w-[208px] h-[50px] md:h-[44px] font-compact uppercase text-[18px] pb-0 hover:bg-[#96755a] mt-[16px] md:mt-0 transition-colors duration-300"
+                    data-modal="modal-visa"
+                    class="bg-[#B38B6D] text-white w-full max-w-[240px] md:w-[208px] h-[50px] md:h-[44px] font-compact uppercase text-[18px] pb-0 hover:bg-[#96755a] mt-[16px] js-open-modal md:mt-0 transition-colors duration-300"
                   >
                     Стать жителем города
                   </button>
                   <a
-                    href="#"
-                    class="font-compact uppercase text-[16px] md:text-[18px] border-b border-dotted border-[#0E0C0A] hover:border-solid transition-all pb-0.5"
+                    href="./prise.html"
+                    class="font-compact js-open-modal uppercase text-[16px] md:text-[18px] border-b border-dotted border-[#0E0C0A] hover:border-solid transition-all pb-0.5"
                   >
                     Узнать подробнее
                   </a>
@@ -1407,12 +1923,13 @@
 
                 <div class="mt-auto w-full flex flex-col items-center gap-5">
                   <button
-                    class="bg-[#B38B6D] w-full max-w-[240px] md:w-[208px] h-[50px] md:h-[44px] text-white font-compact uppercase text-[18px] pb-0 hover:bg-[#96755a] transition-colors duration-300"
+                    data-modal="modal-citizenship"
+                    class="bg-[#B38B6D] w-full max-w-[240px] js-open-modal md:w-[208px] h-[50px] md:h-[44px] text-white font-compact uppercase text-[18px] pb-0 hover:bg-[#96755a] transition-colors duration-300"
                   >
                     Стать жителем города
                   </button>
                   <a
-                    href="#"
+                    href="./prise.html"
                     class="font-compact uppercase text-[16px] md:text-[18px] border-b border-dotted border-[#0E0C0A] hover:border-solid transition-all pb-0.5"
                   >
                     Узнать подробнее
@@ -1477,12 +1994,14 @@
                     25 мая — 1 июня
                   </p>
                 </div>
-
-                <button
+                <a
+                  data-modal="modal-intensive"
                   class="border border-white font-compact uppercase text-[14px] md:text-[18px] md:h-[44px] flex items-center flex-right justify-center px-5 hover:bg-white hover:text-black transition-colors duration-300 w-[132px] h-[35px] md:w-[208px]"
                 >
-                  <span class="pb-0">Узнать подробнее</span>
-                </button>
+                  <div class="js-open-modal">
+                    <span class="pb-0">Узнать подробнее</span>
+                  </div></a
+                >
               </div>
             </div>
           </div>
@@ -1533,7 +2052,7 @@
               </p>
 
               <a
-                href="#"
+                href="https://t.me/s/krasivie_kartinki_1?before=317964"
                 class="group inline-flex items-center tracking-normal text-center gap-3 bg-[#B38B6D] w-[225px] h-[45px] text-[#FCFCF5] font-compact uppercase text-[18px] leading-[24px] mb-2.5 py-4 px-8 hover:bg-[#96755a] transition-all duration-300"
               >
                 <svg
@@ -1567,18 +2086,19 @@
 
           <nav class="flex items-center gap-8 flex-row">
             <a
-              href="#"
+              href="https://t.me/durov_russia"
               class="font-compact leading-[24px] text-[14px] uppercase tracking-widest"
               >ISNOVIKOV</a
             >
             <a
-              href="#"
+              href="https://t.me/durov_russia"
               class="font-compact leading-[24px] text-[14px] uppercase tracking-widest"
               >Написать админу</a
             >
             <a
+              data-modal="modal-payment"
               href="#"
-              class="font-compact leading-[24px] text-[14px] uppercase tracking-widest"
+              class="font-compact js-open-modal leading-[24px] text-[14px] uppercase tracking-widest"
               >Войти</a
             >
           </nav>
