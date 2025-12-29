@@ -27,6 +27,10 @@
   font-display: swap;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /* Классы для шрифтов */
 .font-compact {
   font-family: "Compact", sans-serif;
