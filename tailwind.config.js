@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./prise.html",
+    "./vacansii.html",
     "./exemples.html",
     "./src/**/*.{js,ts,jsx,tsx,html}",
   ],
