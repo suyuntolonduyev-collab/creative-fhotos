@@ -38,6 +38,7 @@
 
 /* Ensuring smooth scrolling and base styles */
 body {
+  overflow-x-hidden;
   background-color: #0e0c0a;
   color: #fcfcf5;
 }
